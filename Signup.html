@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | Crypto Arbitrage</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .signup-container {
+      background-color: rgba(28, 28, 28, 0.85);
+      padding: 40px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1e90ff;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .logo-container img {
+      width: 100px;
+      height: auto;
+    }
+
+    .crypto-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      background-color: #2a2a2a;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1e90ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0d6efd;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      color: #fff;
+    }
+
+    .success-message, .error-message {
+      text-align: center;
+      font-size: 1rem;
+      display: none;
+    }
+
+    .success-message {
+      color: #00cc66;
+      margin-top: 10px;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <div class="background-container">
+    <video autoplay muted loop>
+  <source src="https://dl.dropboxusercontent.com/scl/fi/bs4mddqq57yua7w8tjot1/background.mp4?rlkey=md6fnb8b0lkuzzvmzh14gojpq&st=b1wknit2" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Logo and Title -->
+  <div class="logo-container">
+      <video autoplay muted loop playsinline style="width: 100px; height: auto; border: none; outline: none; background: none; display: block;">
+  <source src="https://dl.dropboxusercontent.com/scl/fi/grduhrszolyx2ipyvjm64/Logo.mp4?rlkey=z9xijvc8x9cpjs7o2dq3r533b&st=iuyj95p2" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+    <div class="crypto-title">Crypto Trading Market</div>
+  </div>
+
+  <!-- Signup Form -->
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+    <form id="signup-form">
+      <label for="name">First Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your First name" required>
+
+<label for="name">Last Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your Last name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+      <label for="currency">Currency</label>
+      <select id="currency" name="currency" required>
+        <option value="">Select currency</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="INR">INR</option>
+        <option value="AUD">AUD</option>
+        <option value="CAD">CAD</option>
+        <option value="BTC">BTC</option>
+        <option value="ETH">ETH</option>
+      </select>
+
+      <label for="country">Country</label>
+      <input type="text" id="country" name="country" placeholder="Enter your country" required>
+
+      <button type="submit">Sign Up</button>
+
+      <div id="success-message" class="success-message">Registration Successful!</div>
+      <div id="error-message" class="error-message">Registration failed. Please try again.</div>
+    </form>
+
+    <div class="back-link">
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+  <!-- Google Maps Autocomplete -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Ty5ZHqoSA2jlyqnyi1c7HqLp6G8Ij7I&libraries=places"></script>
+  <script>
+    function initAutocomplete() {
+      const input = document.getElementById('country');
+      new google.maps.places.Autocomplete(input, {
+        types: ['(regions)']
+      });
+    }
+
+    window.onload = initAutocomplete;
+
+    const form = document.getElementById('signup-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      if (password !== confirmPassword) {
+        document.getElementById('error-message').textContent = "Passwords do not match.";
+        document.getElementById('error-message').style.display = 'block';
+        document.getElementById('success-message').style.display = 'none';
+        return;
+      }
+
+      // Simulate success
+      document.getElementById('success-message').style.display = 'block';
+      document.getElementById('error-message').style.display = 'none';
+
+      setTimeout(() => {
+        form.reset();
+        document.getElementById('success-message').style.display = 'none';
+      }, 3000);
+    });
+	
+	document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('signup-form');
+
+    if (!form) return;
+
+   document.getElementById('signup-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const firstname = document.getElementById('firstname').value;
+  const lastname = document.getElementById('lastname').value;
+  const email = document.getElementById('email').value;
+  const country = document.getElementById('country').value;
+  const currency = document.getElementById('currency').value;
+  const password = document.getElementById('password').value;
+
+  const form = this;
+
+  try {
+    // ✅ 1. Send to HubSpot
+    const hubspotRes = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/48395186/9f64b4aa-29a3-46b3-840a-1894b75021ac', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: [
+          { name: 'firstname', value: firstname },
+          { name: 'lastname', value: lastname },
+          { name: 'email', value: email },
+          { name: 'country', value: country },
+          { name: 'currency', value: currency }
+        ],
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      })
+    });
+
+    if (!hubspotRes.ok) {
+      throw new Error('HubSpot submission failed');
+    }
+
+    // ✅ 2. Send password to backend
+    const backendRes = await fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    });
+
+    if (!backendRes.ok) {
+      throw new Error('Backend submission failed');
+    }
+
+    // ✅ 3. Show success message and redirect
+    alert('Registration successful! Redirecting to dashboard...');
+    form.reset();
+    setTimeout(() => {
+      window.location.href = '/dashboard.html';
+    }, 2000);
+
+  } catch (err) {
+    console.error('Submission error:', err);
+    alert('There was an error with registration. Please try again.');
+  }
+});
+  </script>
+</body>
+</html>
